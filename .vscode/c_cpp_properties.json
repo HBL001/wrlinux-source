@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Wind River Linux",
+            "includePath": [
+                "${workspaceFolder}/include",
+                "/opt/windriver/wrlinux/24.33/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include",
+                "/opt/windriver/wrlinux/24.33/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0"
+            ],
+            "defines": [],
+            "compilerPath": "/opt/windriver/wrlinux/24.33/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/cortexa8hf-neon-wrs-linux-gnueabi-g++",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-gcc-arm"
+        }
+    ],
+    "version": 4
+}
