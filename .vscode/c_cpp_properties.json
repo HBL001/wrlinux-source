@@ -1,18 +1,49 @@
 {
-    "configurations": [
-        {
-            "name": "Wind River Linux",
-            "includePath": [
-                "${workspaceFolder}/include",
-                "/opt/windriver/wrlinux/24.33/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include",
-                "/opt/windriver/wrlinux/24.33/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0"
-            ],
-            "defines": [],
-            "compilerPath": "/opt/windriver/wrlinux/24.33/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/cortexa8hf-neon-wrs-linux-gnueabi-g++",
-            "cStandard": "c11",
-            "cppStandard": "c++14",
-            "intelliSenseMode": "linux-gcc-arm"
-        }
-    ],
-    "version": 4
+  "env": {
+    "SDK_ROOT": "/opt/windriver/wrlinux/24.33"
+  },
+  "configurations": [
+    {
+      "name": "Wind River Linux",
+      "includePath": [
+        "${workspaceFolder}/include",
+        "${workspaceFolder}/include/**",
+        "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/**",
+        "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0",
+        "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0/arm-wrs-linux-gnueabi",
+        "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0/arm-wrs-linux-gnueabi/bits",
+        "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0/arm-wrs-linux-gnueabi/ext"
+      ],
+      "compilerPath": "${SDK_ROOT}/sysroots/x86_64-wrlinuxsdk-linux/usr/bin/arm-wrs-linux/arm-wrs-linux-g++",
+      "compilerArgs": [
+        "-isysroot", "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi",
+        "-mcpu=cortexa8hf-neon",
+        "-mthumb"
+      ],
+      "defines": [
+        "__linux__",
+        "__arm__",
+        "__ARM_ARCH_7A__=1",
+        "__ARM_NEON__=1",
+        "__ARMEL__=1",
+        "__gnu_linux__=1"
+      ],
+      "cStandard": "c23",
+      "cppStandard": "c++23",
+      "intelliSenseMode": "linux-gcc-arm",
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "${workspaceFolder}/include/**",
+          "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/**",
+          "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0",
+          "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0/arm-wrs-linux-gnueabi",
+          "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0/arm-wrs-linux-gnueabi/bits",
+          "${SDK_ROOT}/sysroots/cortexa8hf-neon-wrs-linux-gnueabi/usr/include/c++/13.3.0/arm-wrs-linux-gnueabi/ext"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
 }
